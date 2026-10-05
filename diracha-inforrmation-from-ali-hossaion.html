@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Diracha Academy — একটি ছোট ফর্ম</title>
+<meta name="theme-color" content="#0F766E">
+<style>
+:root{
+  --teal:#0F766E;
+  --teal-dark:#0B5D57;
+  --teal-soft:#E6F4F2;
+  --amber:#F59E0B;
+  --amber-soft:#FEF3C7;
+  --green:#16A34A;
+  --green-soft:#DCFCE7;
+  --red:#DC2626;
+  --red-soft:#FEE2E2;
+  --ink:#0F172A;
+  --muted:#64748B;
+  --line:#E5E7EB;
+  --bg:#F8FAFC;
+  --card:#FFFFFF;
+  --radius:18px;
+  --shadow:0 4px 16px -4px rgba(15,23,42,.08);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{
+  font-family:"Hind Siliguri","Segoe UI",system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  font-size:16px;
+  line-height:1.6;
+  padding-bottom:100px;
+}
+
+/* ---------- header ---------- */
+.top{
+  background:linear-gradient(135deg,var(--teal),#0EA5E9);
+  color:#fff;
+  padding:24px 20px 32px;
+  border-radius:0 0 24px 24px;
+}
+.top h1{margin:0 0 6px;font-size:22px;font-weight:700;letter-spacing:-.3px}
+.top p{margin:0;font-size:14px;opacity:.92;line-height:1.5}
+.badge{
+  display:inline-block;
+  background:rgba(255,255,255,.22);
+  padding:3px 10px;
+  border-radius:99px;
+  font-size:12px;
+  font-weight:600;
+  margin-bottom:10px;
+}
+
+/* ---------- progress ---------- */
+.progress-wrap{
+  padding:0 20px;
+  margin-top:-18px;
+  margin-bottom:18px;
+}
+.progress-card{
+  background:var(--card);
+  border-radius:14px;
+  padding:14px 16px;
+  box-shadow:var(--shadow);
+}
+.progress-bar{
+  height:6px;
+  background:#E5E7EB;
+  border-radius:99px;
+  overflow:hidden;
+  margin-bottom:8px;
+}
+.progress-bar i{
+  display:block;
+  height:100%;
+  width:14%;
+  background:linear-gradient(90deg,var(--teal),#0EA5E9);
+  transition:width .35s ease;
+}
+.progress-text{
+  font-size:13px;
+  color:var(--muted);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.progress-text b{color:var(--teal)}
+
+/* ---------- steps ---------- */
+.wrap{max-width:640px;margin:0 auto;padding:0 16px}
+.step{display:none;animation:fade .3s ease}
+.step.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+.card{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:22px 20px;
+  box-shadow:var(--shadow);
+  margin-bottom:16px;
+}
+.step-head{margin-bottom:18px}
+.step-head .num{
+  display:inline-block;
+  background:var(--teal-soft);
+  color:var(--teal);
+  font-weight:700;
+  font-size:13px;
+  padding:4px 12px;
+  border-radius:99px;
+  margin-bottom:10px;
+}
+.step-head h2{
+  margin:0 0 6px;
+  font-size:19px;
+  font-weight:700;
+  letter-spacing:-.3px;
+  line-height:1.35;
+}
+.step-head p{
+  margin:0;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.55;
+}
+
+/* ---------- fields ---------- */
+.field{margin-bottom:18px}
+.field:last-child{margin-bottom:0}
+label{
+  display:block;
+  font-weight:600;
+  font-size:14.5px;
+  margin-bottom:6px;
+  color:var(--ink);
+}
+label .opt{
+  font-weight:400;
+  color:var(--muted);
+  font-size:12.5px;
+  margin-left:4px;
+}
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="url"],
+input[type="number"],
+select,
+textarea{
+  width:100%;
+  padding:13px 14px;
+  border:2px solid var(--line);
+  border-radius:12px;
+  font-family:inherit;
+  font-size:15.5px;
+  background:#fff;
+  color:var(--ink);
+  transition:.15s;
+  -webkit-appearance:none;
+  appearance:none;
+}
+textarea{min-height:96px;resize:vertical;line-height:1.55}
+input::placeholder,textarea::placeholder{color:#9CA3AF}
+input:focus,select:focus,textarea:focus{
+  outline:none;
+  border-color:var(--teal);
+  box-shadow:0 0 0 4px rgba(15,118,110,.12);
+}
+select{
+  background-image:url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364748B' stroke-width='2.5' stroke-linecap='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-position:right 14px center;
+  background-size:18px;
+  padding-right:44px;
+}
+.hint{
+  font-size:12.5px;
+  color:var(--muted);
+  margin-top:6px;
+  line-height:1.5;
+  padding-left:2px;
+}
+.hint b{color:var(--teal);font-weight:600}
+
+/* ---------- choice pills ---------- */
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  padding:11px 16px;
+  background:#F1F5F9;
+  border:2px solid transparent;
+  border-radius:12px;
+  cursor:pointer;
+  font-size:14.5px;
+  font-weight:500;
+  transition:.15s;
+  user-select:none;
+}
+.pill input{
+  position:absolute;opacity:0;pointer-events:none;
+}
+.pill:has(input:checked){
+  background:var(--teal-soft);
+  border-color:var(--teal);
+  color:var(--teal-dark);
+  font-weight:600;
+}
+.pill:has(input:checked)::before{
+  content:"✓";
+  margin-right:6px;
+  font-weight:800;
+  color:var(--teal);
+}
+
+/* ---------- class price rows ---------- */
+.class-row{
+  background:#F8FAFC;
+  border:1.5px solid var(--line);
+  border-radius:14px;
+  padding:14px 14px 10px;
+  margin-bottom:10px;
+}
+.class-row .row-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:10px;
+  padding-bottom:10px;
+  border-bottom:1px dashed var(--line);
+}
+.class-row .row-head strong{font-size:15px;color:var(--teal)}
+.class-row .row-head .status-pill{
+  font-size:11.5px;
+  font-weight:700;
+  padding:3px 10px;
+  border-radius:99px;
+  background:#E5E7EB;
+  color:var(--muted);
+}
+.class-row .row-head .status-pill.on{
+  background:var(--green-soft);
+  color:var(--green);
+}
+.class-row .row-body{display:grid;gap:10px}
+@media(min-width:480px){
+  .class-row .row-body{grid-template-columns:1fr 1fr}
+}
+.mini-label{
+  display:block;
+  font-size:12.5px;
+  font-weight:600;
+  color:var(--muted);
+  margin-bottom:4px;
+}
+
+/* ---------- notice ---------- */
+.notice{
+  background:var(--amber-soft);
+  border-left:4px solid var(--amber);
+  padding:12px 14px;
+  border-radius:8px;
+  font-size:13.5px;
+  color:#92400E;
+  line-height:1.55;
+  margin-bottom:16px;
+}
+.notice.green{
+  background:var(--green-soft);
+  border-color:var(--green);
+  color:#14532D;
+}
+
+/* ---------- nav buttons ---------- */
+.nav{
+  display:flex;
+  gap:10px;
+  margin-top:8px;
+}
+.btn{
+  flex:1;
+  padding:14px 20px;
+  border-radius:12px;
+  font-family:inherit;
+  font-size:15.5px;
+  font-weight:700;
+  cursor:pointer;
+  border:2px solid transparent;
+  transition:.15s;
+  text-align:center;
+  -webkit-appearance:none;
+}
+.btn:active{transform:scale(.98)}
+.btn.primary{
+  background:var(--teal);
+  color:#fff;
+}
+.btn.primary:hover{background:var(--teal-dark)}
+.btn.primary:disabled{opacity:.55}
+.btn.ghost{
+  background:#fff;
+  border-color:var(--line);
+  color:var(--ink);
+  flex:0 0 auto;
+  min-width:96px;
+}
+.btn.ghost:hover{background:#F8FAFC}
+
+/* ---------- fixed bottom bar ---------- */
+.bottom{
+  position:fixed;
+  left:0;right:0;bottom:0;
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(10px);
+  border-top:1px solid var(--line);
+  padding:12px 16px;
+  padding-bottom:calc(12px + env(safe-area-inset-bottom));
+  z-index:50;
+}
+.bottom-in{
+  max-width:640px;
+  margin:0 auto;
+  display:flex;
+  gap:8px;
+  align-items:center;
+}
+.bottom .save-note{
+  flex:1;
+  font-size:12px;
+  color:var(--muted);
+  line-height:1.3;
+}
+.bottom .save-note.saved{color:var(--green)}
+.bottom .btn{padding:11px 18px;font-size:14.5px}
+
+/* ---------- modal ---------- */
+.modal{
+  position:fixed;inset:0;
+  background:rgba(15,23,42,.6);
+  display:none;
+  z-index:100;
+  padding:16px;
+  overflow-y:auto;
+}
+.modal.open{display:flex;align-items:flex-start;justify-content:center;padding-top:40px}
+.modal-box{
+  background:#fff;
+  border-radius:20px;
+  max-width:520px;
+  width:100%;
+  padding:24px 22px;
+  box-shadow:0 20px 50px -12px rgba(0,0,0,.4);
+}
+.modal-box h3{margin:0 0 10px;font-size:18px;line-height:1.35}
+.modal-box p{margin:0 0 14px;color:var(--muted);font-size:14.5px;line-height:1.55}
+.modal-box .icon{
+  display:grid;place-items:center;
+  width:56px;height:56px;
+  border-radius:99px;
+  margin:0 auto 14px;
+  font-size:28px;
+}
+.modal-box .icon.ok{background:var(--green-soft);color:var(--green)}
+.modal-box .icon.err{background:var(--red-soft);color:var(--red)}
+.modal-box .actions{display:flex;flex-direction:column;gap:8px;margin-top:8px}
+.modal-box textarea{
+  font-family:ui-monospace,Menlo,monospace;
+  font-size:11.5px;
+  min-height:160px;
+  margin-top:10px;
+  display:none;
+}
+.modal-box textarea.show{display:block}
+
+/* ---------- final step summary ---------- */
+.done-list{
+  list-style:none;
+  padding:0;
+  margin:0 0 14px;
+}
+.done-list li{
+  padding:10px 0;
+  border-bottom:1px solid var(--line);
+  font-size:14px;
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+}
+.done-list li::before{
+  content:"✓";
+  color:var(--green);
+  font-weight:800;
+  flex-shrink:0;
+}
+.done-list li:last-child{border-bottom:none}
+
+@media (max-width:400px){
+  .top h1{font-size:19px}
+  .step-head h2{font-size:17px}
+  .card{padding:18px 16px}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<div class="top">
+  <span class="badge">🕒 সময় লাগবে মাত্র ৫ মিনিট</span>
+  <h1>আসসালামু আলাইকুম</h1>
+  <p>ডিরাচা একাডেমির অনলাইন সিস্টেম বানানোর জন্য আপনার কাছ থেকে কিছু তথ্য দরকার। ছোট ছোট ৭টি ধাপে সব প্রশ্ন করা হয়েছে — বাংলায়। একদম সহজ ভাষায়।</p>
+</div>
+
+<!-- ================= PROGRESS ================= -->
+<div class="progress-wrap">
+  <div class="progress-card">
+    <div class="progress-bar"><i id="bar"></i></div>
+    <div class="progress-text">
+      <span id="stepLabel">ধাপ ১ / ৭ — আপনার পরিচয়</span>
+      <span><b id="pct">14%</b></span>
+    </div>
+  </div>
+</div>
+
+<!-- ================= FORM ================= -->
+<form id="form" class="wrap" novalidate>
+
+  <!-- =========== STEP 1: Who you are =========== -->
+  <section class="step active" data-step="1" data-label="আপনার পরিচয়">
+    <div class="card">
+      <div class="step-head">
+        <span class="num">ধাপ ১</span>
+        <h2>আপনার পরিচয় দিন</h2>
+        <p>এই ফর্ম কে পূরণ করছেন সেটা জানতে চাইছি।</p>
+      </div>
+
+      <div class="field">
+        <label>আপনার নাম <span class="opt">(পুরো নাম)</span></label>
+        <input type="text" name="your_name" placeholder="যেমন: মোহাম্মদ আব্দুল করিম" required>
+      </div>
+
+      <div class="field">
+        <label>একাডেমিতে আপনার পদ <span class="opt">(কী কাজ করেন?)</span></label>
+        <select name="your_role" required>
+          <option value="">— বেছে নিন —</option>
+          <option>প্রিন্সিপাল / পরিচালক</option>
+          <option>মালিক</option>
+          <option>শিক্ষক / শিক্ষিকা</option>
+          <option>অফিস ম্যানেজার</option>
+          <option>অন্য কেউ</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>আপনার মোবাইল নম্বর <span class="opt">(আমরা প্রয়োজনে কল দেব)</span></label>
+        <input type="tel" name="your_phone" placeholder="01XXXXXXXXX" inputmode="numeric" required>
+      </div>
+
+      <div class="field">
+        <label>আপনার ইমেইল <span class="opt">(না থাকলে খালি রাখুন)</span></label>
+        <input type="email" name="your_email" placeholder="name@gmail.com">
+      </div>
+
+    </div>
+    <div class="nav">
+      <button type="button" class="btn primary" data-next>পরবর্তী →</button>
+    </div>
+  </section>
+
+  <!-- =========== STEP 2: Academy info =========== -->
+  <section class="step" data-step="2" data-label="একাডেমির তথ্য">
+    <div class="card">
+      <div class="step-head">
+        <span class="num">ধাপ ২</span>
+        <h2>একাডেমির নাম ও ঠিকানা</h2>
+        <p>ওয়েবসাইটে যা যা দেখানো হবে।</p>
+      </div>
+
+      <div class="field">
+        <label>একাডেমির নাম</label>
+        <input type="text" name="academy_name" placeholder="যেমন: ডিরাচা একাডেমি" required>
+      </div>
+
+      <div class="field">
+        <label>একাডেমির ঠিকানা <span class="opt">(যে ঠিকানায় শিক্ষার্থীরা আসে)</span></label>
+        <textarea name="academy_address" placeholder="যেমন: গ্রাম/রোড, উপজেলা, জেলা" required></textarea>
+      </div>
+
+      <div class="field">
+        <label>অফিসিয়াল মোবাইল / হোয়াটসঅ্যাপ নম্বর</label>
+        <input type="tel" name="academy_phone" placeholder="01XXXXXXXXX" inputmode="numeric" required>
+        <p class="hint">এই নম্বরেই শিক্ষার্থীরা বেতন পাঠাবে এবং যোগাযোগ করবে।</p>
+      </div>
+
+      <div class="field">
+        <label>একাডেমির ইমেইল <span class="opt">(থাকলে)</span></label>
+        <input type="email" name="academy_email" placeholder="info@diracha.com">
+      </div>
+
+      <div class="field">
+        <label>একাডেমি সম্পর্কে দুই লাইন লিখুন <span class="opt">(ওয়েবসাইটে দেখানো হবে)</span></label>
+        <textarea name="academy_about" placeholder="যেমন: ডিরাচা একাডেমি ২০১৯ সাল থেকে ৬ষ্ঠ–১২শ শ্রেণির শিক্ষার্থীদের জন্য মানসম্মত শিক্ষা প্রদান করে আসছে।"></textarea>
+      </div>
+
+      <div class="field">
+        <label>আপনার লোগো আছে? <span class="opt">(ছবি)</span></label>
+        <div class="pills">
+          <label class="pill"><input type="radio" name="has_logo" value="হ্যাঁ"> হ্যাঁ, আছে</label>
+          <label class="pill"><input type="radio" name="has_logo" value="না"> না, নেই</label>
+          <label class="pill"><input type="radio" name="has_logo" value="পরে পাঠাব"> পরে পাঠাব</label>
+        </div>
+        <p class="hint">থাকলে হোয়াটসঅ্যাপে পাঠাতে পারবেন ফর্ম শেষ করার পরে।</p>
+      </div>
+
+    </div>
+    <div class="nav">
+      <button type="button" class="btn ghost" data-back>← পিছনে</button>
+      <button type="button" class="btn primary" data-next>পরবর্তী →</button>
+    </div>
+  </section>
+
+  <!-- =========== STEP 3: Classes & prices =========== -->
+  <section class="step" data-step="3" data-label="শ্রেণি ও বেতন">
+    <div class="card">
+      <div class="step-head">
+        <span class="num">ধাপ ৩</span>
+        <h2>শ্রেণি এবং বেতন</h2>
+        <p>কোন শ্রেণিগুলো চালু করবেন এবং প্রতি শ্রেণির বেতন কত — সেটা বলুন।</p>
+      </div>
+
+      <div class="notice">
+        💡 <b>মনে রাখবেন:</b> এখানে শিক্ষার্থীরা পুরো <b>একটি শ্রেণি</b> কিনবে — শুধু একটা বিষয় নয়। তাই প্রতিটি শ্রেণির জন্য একটি মাত্র বেতন দিন।
+      </div>
+
+      <div id="classList">
+        <!-- filled by JS -->
+      </div>
+
+    </div>
+    <div class="nav">
+      <button type="button" class="btn ghost" data-back>← পিছনে</button>
+      <button type="button" class="btn primary" data-next>পরবর্তী →</button>
+    </div>
+  </section>
+
+  <!-- =========== STEP 4: Subjects =========== -->
+  <section class="step" data-step="4" data-label="বিষয়সমূহ">
+    <div class="card">
+      <div class="step-head">
+        <span class="num">ধাপ ৪</span>
+        <h2>প্রতিটি শ্রেণিতে কোন কোন বিষয় পড়ানো হয়?</h2>
+        <p>শুধু বিষয়ের নাম লিখুন — প্রতিটি নাম আলাদা লাইনে।</p>
+      </div>
+
+      <div class="notice green">
+        ✅ <b>উদাহরণ:</b><br>
+        আরবি<br>
+        বাংলা<br>
+        ইংরেজি<br>
+        গণিত<br>
+        বিজ্ঞান
+      </div>
+
+      <div id="subjectList">
+        <!-- filled by JS -->
+      </div>
+
+    </div>
+    <div class="nav">
+      <button type="button" class="btn ghost" data-back>← পিছনে</button>
+      <button type="button" class="btn primary" data-next>পরবর্তী →</button>
+    </div>
+  </section>
+
+  <!-- =========== STEP 5: Payment =========== -->
+  <section class="step" data-step="5" data-label="বেতন পরিশোধ">
+    <div class="card">
+      <div class="step-head">
+        <span class="num">ধাপ ৫</span>
+        <h2>শিক্ষার্থীরা কীভাবে বেতন দেবে?</h2>
+        <p>আপনার ব্যবসার টাকা কীভাবে আসে সেটা জানতে চাইছি।</p>
+      </div>
+
+      <div class="notice">
+        ⚠️ <b>গুরুত্বপূর্ণ:</b> এই সিস্টেমে কোনো অনলাইন পেমেন্ট থাকবে না। শিক্ষার্থী বেতন পাঠাবে, তারপর আপনি নিজে দেখে অনুমতি দেবেন।
+      </div>
+
+      <div class="field">
+        <label>শিক্ষার্থীরা কোন কোন মাধ্যমে টাকা পাঠাবে? <span class="opt">(একাধিক বেছে নিতে পারেন)</span></label>
+        <div class="pills">
+          <label class="pill"><input type="checkbox" name="pay_method" value="বিকাশ"> বিকাশ</label>
+          <label class="pill"><input type="checkbox" name="pay_method" value="নগদ"> নগদ</label>
+          <label class="pill"><input type="checkbox" name="pay_method" value="রকেট"> রকেট</label>
+          <label class="pill"><input type="checkbox" name="pay_method" value="উপায়"> উপায়</label>
+          <label class="pill"><input type="checkbox" name="pay_method" value="ব্যাংক"> ব্যাংক</label>
+          <label class="pill"><input type="checkbox" name="pay_method" value="নগদ টাকা"> হাতে হাতে নগদ</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>যে নম্বরে টাকা পাঠাবে <span class="opt">(আপনার বিকাশ/নগদ ইত্যাদি নম্বর)</span></label>
+        <input type="tel" name="pay_number" placeholder="01XXXXXXXXX" inputmode="numeric" required>
+      </div>
+
+      <div class="field">
+        <label>টাকার অ্যাকাউন্ট কার নামে? <span class="opt">(বিকাশ/ব্যাংক অ্যাকাউন্টের নাম)</span></label>
+        <input type="text" name="pay_account_name" placeholder="যেমন: ডিরাচা একাডেমি / মোহাম্মদ করিম">
+      </div>
+
+      <div class="field">
+        <label>শিক্ষার্থীদের জন্য একটি ছোট নির্দেশনা লিখুন <span class="opt">(বিকাশে টাকা পাঠানোর নিয়ম)</span></label>
+        <textarea name="pay_instruction" placeholder="যেমন: ৫,০০০ টাকা বিকাশ করুন 01711-XXXXXX নাম্বারে। টাকা পাঠানোর পর স্ক্রিনশট হোয়াটসঅ্যাপে পাঠান।"></textarea>
+        <p class="hint">এই লেখাটি ওয়েবসাইটে শিক্ষার্থীরা দেখবে।</p>
+      </div>
+
+    </div>
+    <div class="nav">
+      <button type="button" class="btn ghost" data-back>← পিছনে</button>
+      <button type="button" class="btn primary" data-next>পরবর্তী →</button>
+    </div>
+  </section>
+
+  <!-- =========== STEP 6: Rules =========== -->
+  <section class="step" data-step="6" data-label="নিয়মকানুন">
+    <div class="card">
+      <div class="step-head">
+        <span class="num">ধাপ ৬</span>
+        <h2>সিস্টেমের কিছু নিয়ম</h2>
+        <p>শুধু কয়েকটি সহজ প্রশ্ন — যা শিক্ষার্থী ও শিক্ষক সম্পর্কে।</p>
+      </div>
+
+      <div class="field">
+        <label>প্রতিটি বিষয়ে কতটি লেসন <b>ফ্রি</b> দেখতে পাবে?</label>
+        <select name="free_lessons" required>
+          <option value="">— বেছে নিন —</option>
+          <option>১টি লেসন ফ্রি</option>
+          <option>২টি লেসন ফ্রি</option>
+          <option>৩টি লেসন ফ্রি</option>
+          <option>৫টি লেসন ফ্রি</option>
+          <option>সব লেসন ফ্রি</option>
+          <option>ফ্রি কিছু নেই</option>
+        </select>
+        <p class="hint">যেমন: আপনি "৩টি" বেছে নিলে — প্রতিটি বিষয়ের প্রথম ৩টি লেসন সবাই দেখতে পারবে।</p>
+      </div>
+
+      <div class="field">
+        <label>শ্রেণি কেনার পরে কতদিন চলবে?</label>
+        <div class="pills">
+          <label class="pill"><input type="radio" name="access_duration" value="1 বছর (6-10 শ্রেণি)"> ১ বছর (৬ষ্ঠ–১০ম)</label>
+          <label class="pill"><input type="radio" name="access_duration" value="2 বছর (11-12 শ্রেণি)"> ২ বছর (১১শ–১২শ)</label>
+        </div>
+        <p class="hint">এটাই আমরা বানাবো: ৬ষ্ঠ–১০ম শ্রেণিতে ১ বছর, ১১শ–১২শ শ্রেণিতে ২ বছর।</p>
+      </div>
+
+      <div class="field">
+        <label>একজন শিক্ষার্থী একই সাথে একাধিক শ্রেণি কিনতে পারবে?</label>
+        <div class="pills">
+          <label class="pill"><input type="radio" name="multi_class" value="হ্যাঁ"> হ্যাঁ, পারবে</label>
+          <label class="pill"><input type="radio" name="multi_class" value="না"> না, একটা একটাই</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>একসাথে কতজন শিক্ষক থাকবেন?</label>
+        <select name="teacher_count">
+          <option value="">— বেছে নিন —</option>
+          <option>১–৫ জন</option>
+          <option>৬–১০ জন</option>
+          <option>১১–২০ জন</option>
+          <option>২০+ জন</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>শিক্ষকরা কি নিজেই লেসন বানিয়ে সরাসরি শিক্ষার্থীদের দেখাতে পারবেন?</label>
+        <div class="pills">
+          <label class="pill"><input type="radio" name="teacher_publish" value="হ্যাঁ"> হ্যাঁ, সরাসরি</label>
+          <label class="pill"><input type="radio" name="teacher_publish" value="না, আমি দেখে অনুমতি দেব"> না, আমি দেখে অনুমতি দেব</label>
+          <label class="pill"><input type="radio" name="teacher_publish" value="জানি না"> জানি না</label>
+        </div>
+      </div>
+
+    </div>
+    <div class="nav">
+      <button type="button" class="btn ghost" data-back>← পিছনে</button>
+      <button type="button" class="btn primary" data-next>পরবর্তী →</button>
+    </div>
+  </section>
+
+  <!-- =========== STEP 7: Final =========== -->
+  <section class="step" data-step="7" data-label="শেষ ধাপ">
+    <div class="card">
+      <div class="step-head">
+        <span class="num">ধাপ ৭</span>
+        <h2>প্রায় শেষ</h2>
+        <p>আর কিছু বলার থাকলে এখানে লিখুন। না থাকলে সোজা পাঠিয়ে দিন।</p>
+      </div>
+
+      <div class="field">
+        <label>আপনার কোনো প্রশ্ন বা বিশেষ কিছু বলার আছে? <span class="opt">(না থাকলে খালি রাখুন)</span></label>
+        <textarea name="final_notes" placeholder="যেমন: আমাদের একটি মাদ্রাসা শাখাও আছে, সেটা পরে যোগ করতে চাই। অথবা: কিছু লেসন আরবিতে হবে।"></textarea>
+      </div>
+
+      <div class="field">
+        <label>আপনি কি নিশ্চিত এই তথ্যগুলো সঠিক?</label>
+        <div class="pills">
+          <label class="pill"><input type="radio" name="confirm" value="হ্যাঁ, নিশ্চিত" required> হ্যাঁ, নিশ্চিত</label>
+          <label class="pill"><input type="radio" name="confirm" value="কিছু এখনো চূড়ান্ত নয়"> কিছু চূড়ান্ত নয়</label>
+        </div>
+      </div>
+
+      <div class="notice green">
+        ✅ পাঠানোর পরে আমরা আপনার সাথে যোগাযোগ করব। আপনি চাইলে আগে <b>সংরক্ষণ</b> করে পরে পাঠাতে পারবেন।
+      </div>
+
+    </div>
+    <div class="nav">
+      <button type="button" class="btn ghost" data-back>← পিছনে</button>
+      <button type="submit" class="btn primary" id="submitBtn">পাঠিয়ে দিন ✓</button>
+    </div>
+  </section>
+
+</form>
+
+<!-- ================= BOTTOM BAR ================= -->
+<div class="bottom">
+  <div class="bottom-in">
+    <div class="save-note" id="saveNote">আপনার উত্তর স্বয়ংক্রিয়ভাবে সংরক্ষিত হচ্ছে…</div>
+    <button type="button" class="btn ghost" id="btnDownload" style="flex:0 0 auto;min-width:auto;padding:8px 12px;font-size:13px">ডাউনলোড</button>
+  </div>
+</div>
+
+<!-- ================= MODAL ================= -->
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <div class="icon ok" id="modalIcon">✓</div>
+    <h3 id="modalTitle">পাঠানো হয়েছে</h3>
+    <p id="modalBody"></p>
+    <textarea id="modalText" readonly></textarea>
+    <div class="actions" id="modalActions"></div>
+  </div>
+</div>
+
+<script>
+/* =========================================================
+   ⚙️  CHANGE THIS EMAIL BEFORE UPLOADING
+   ========================================================= */
+const RECIPIENT_EMAIL = "YOUR_EMAIL_HERE@example.com";
+/* ========================================================= */
+
+const STORAGE_KEY = "diracha_client_form_v1";
+const form = document.getElementById("form");
+const steps = Array.from(document.querySelectorAll(".step"));
+const totalSteps = steps.length;
+let current = 1;
+
+/* ---------- build class rows ---------- */
+const classes = [
+  { level: 6, name: "৬ষ্ঠ শ্রেণি" },
+  { level: 7, name: "৭ম শ্রেণি" },
+  { level: 8, name: "৮ম শ্রেণি" },
+  { level: 9, name: "৯ম শ্রেণি" },
+  { level: 10, name: "১০ম শ্রেণি" },
+  { level: 11, name: "১১শ শ্রেণি" },
+  { level: 12, name: "১২শ শ্রেণি" },
+];
+
+const classListEl = document.getElementById("classList");
+classes.forEach((c) => {
+  const row = document.createElement("div");
+  row.className = "class-row";
+  row.innerHTML = `
+    <div class="row-head">
+      <strong>${c.name}</strong>
+      <span class="status-pill" data-status="${c.level}">বন্ধ</span>
+    </div>
+    <div class="row-body">
+      <div>
+        <span class="mini-label">এই শ্রেণি চালু করবেন?</span>
+        <div class="pills">
+          <label class="pill"><input type="radio" name="class_${c.level}_active" value="হ্যাঁ" data-toggle="${c.level}"> হ্যাঁ</label>
+          <label class="pill"><input type="radio" name="class_${c.level}_active" value="না"> না</label>
+        </div>
+      </div>
+      <div>
+        <span class="mini-label">বেতন (টাকা)</span>
+        <input type="number" name="class_${c.level}_price" placeholder="যেমন: 5000" inputmode="numeric" min="0">
+      </div>
+    </div>
+  `;
+  classListEl.appendChild(row);
+});
+
+// Update status pill when toggle changes
+document.querySelectorAll("[data-toggle]").forEach((el) => {
+  el.addEventListener("change", () => {
+    const level = el.dataset.toggle;
+    const pill = document.querySelector(`[data-status="${level}"]`);
+    if (el.value === "হ্যাঁ") {
+      pill.textContent = "চালু";
+      pill.classList.add("on");
+    } else {
+      pill.textContent = "বন্ধ";
+      pill.classList.remove("on");
+    }
+    save();
+  });
+});
+
+/* ---------- build subject textareas ---------- */
+const subjectListEl = document.getElementById("subjectList");
+classes.forEach((c) => {
+  const div = document.createElement("div");
+  div.className = "field";
+  div.innerHTML = `
+    <label>${c.name} — বিষয়গুলো</label>
+    <textarea name="subjects_${c.level}" placeholder="প্রতি লাইনে একটি বিষয় লিখুন"></textarea>
+  `;
+  subjectListEl.appendChild(div);
+});
+
+/* ---------- step navigation ---------- */
+function goTo(n) {
+  if (n < 1 || n > totalSteps) return;
+  current = n;
+  steps.forEach((s) => s.classList.toggle("active", Number(s.dataset.step) === n));
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  updateProgress();
+}
+
+document.querySelectorAll("[data-next]").forEach((b) =>
+  b.addEventListener("click", () => {
+    if (validateStep(current)) {
+      save();
+      goTo(current + 1);
+    }
+  })
+);
+document.querySelectorAll("[data-back]").forEach((b) =>
+  b.addEventListener("click", () => goTo(current - 1))
+);
+
+/* ---------- validation (only required fields) ---------- */
+function validateStep(step) {
+  const section = steps.find((s) => Number(s.dataset.step) === step);
+  if (!section) return true;
+  const fields = Array.from(section.querySelectorAll("[required]"));
+  for (const f of fields) {
+    let ok = true;
+    if (f.type === "radio") {
+      const group = section.querySelectorAll(`input[name="${f.name}"]`);
+      ok = Array.from(group).some((g) => g.checked);
+    } else if (f.type === "checkbox") {
+      const group = section.querySelectorAll(`input[name="${f.name}"]`);
+      ok = Array.from(group).some((g) => g.checked);
+    } else {
+      ok = (f.value || "").trim() !== "";
+    }
+    if (!ok) {
+      f.scrollIntoView({ behavior: "smooth", block: "center" });
+      f.style.borderColor = "#DC2626";
+      setTimeout(() => (f.style.borderColor = ""), 1800);
+      alert("অনুগ্রহ করে এই ঘরটি পূরণ করুন।");
+      return false;
+    }
+  }
+  return true;
+}
+
+/* ---------- progress ---------- */
+function updateProgress() {
+  const pct = Math.round((current / totalSteps) * 100);
+  document.getElementById("bar").style.width = pct + "%";
+  document.getElementById("pct").textContent = pct + "%";
+  const label = steps.find((s) => Number(s.dataset.step) === current)?.dataset.label || "";
+  document.getElementById("stepLabel").textContent = `ধাপ ${current} / ${totalSteps} — ${label}`;
+}
+
+/* ---------- auto-save ---------- */
+let saveTimer = null;
+function save() {
+  const data = {};
+  new FormData(form).forEach((v, k) => {
+    if (data[k] !== undefined) {
+      data[k] = Array.isArray(data[k]) ? [...data[k], v] : [data[k], v];
+    } else {
+      data[k] = v;
+    }
+  });
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({ at: Date.now(), data }));
+    const note = document.getElementById("saveNote");
+    note.textContent = "✓ সংরক্ষিত হয়েছে";
+    note.classList.add("saved");
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(() => {
+      note.textContent = "আপনার উত্তর স্বয়ংক্রিয়ভাবে সংরক্ষিত হচ্ছে…";
+      note.classList.remove("saved");
+    }, 1600);
+  } catch (e) {}
+}
+
+function restore() {
+  let raw = null;
+  try { raw = localStorage.getItem(STORAGE_KEY); } catch (e) { return; }
+  if (!raw) return;
+  try {
+    const parsed = JSON.parse(raw);
+    const data = parsed.data || {};
+    Object.entries(data).forEach(([k, v]) => {
+      const values = Array.isArray(v) ? v : [v];
+      const els = form.querySelectorAll(`[name="${k}"]`);
+      els.forEach((el) => {
+        if (el.type === "radio" || el.type === "checkbox") {
+          el.checked = values.includes(el.value);
+          if (el.dataset.toggle && el.checked && el.value === "হ্যাঁ") {
+            const pill = document.querySelector(`[data-status="${el.dataset.toggle}"]`);
+            if (pill) { pill.textContent = "চালু"; pill.classList.add("on"); }
+          }
+        } else if (el.tagName === "SELECT") {
+          el.value = values[0] || "";
+        } else {
+          el.value = values[0] || "";
+        }
+      });
+    });
+  } catch (e) {}
+}
+
+form.addEventListener("input", save);
+form.addEventListener("change", save);
+
+/* ---------- build readable report ---------- */
+function buildReport() {
+  const lines = [];
+  lines.push("═══════════════════════════════════════════");
+  lines.push("ডিরাচা একাডেমি — ক্লায়েন্ট তথ্য");
+  lines.push("সময়: " + new Date().toLocaleString("bn-BD"));
+  lines.push("═══════════════════════════════════════════");
+  lines.push("");
+
+  const labels = {
+    your_name: "নাম",
+    your_role: "পদ",
+    your_phone: "ফোন",
+    your_email: "ইমেইল",
+    academy_name: "একাডেমির নাম",
+    academy_address: "ঠিকানা",
+    academy_phone: "একাডেমির ফোন / হোয়াটসঅ্যাপ",
+    academy_email: "একাডেমির ইমেইল",
+    academy_about: "একাডেমি সম্পর্কে",
+    has_logo: "লোগো আছে?",
+    pay_method: "পেমেন্ট মাধ্যম",
+    pay_number: "টাকা পাঠানোর নম্বর",
+    pay_account_name: "অ্যাকাউন্টের নাম",
+    pay_instruction: "শিক্ষার্থীর নির্দেশনা",
+    free_lessons: "ফ্রি লেসন",
+    access_duration: "কেনার পরে কতদিন",
+    multi_class: "একাধিক শ্রেণি?",
+    teacher_count: "শিক্ষক সংখ্যা",
+    teacher_publish: "শিক্ষক সরাসরি পাবলিশ?",
+    final_notes: "অতিরিক্ত মন্তব্য",
+    confirm: "নিশ্চিতকরণ",
+  };
+
+  const fd = new FormData(form);
+  const grouped = {};
+  fd.forEach((v, k) => {
+    if (!grouped[k]) grouped[k] = [];
+    grouped[k].push(v);
+  });
+
+  Object.entries(grouped).forEach(([key, values]) => {
+    if (key.startsWith("class_") || key.startsWith("subjects_")) return;
+    const label = labels[key] || key;
+    lines.push("• " + label + ": " + values.join(", "));
+  });
+
+  lines.push("");
+  lines.push("─── শ্রেণি ও বেতন ───");
+  classes.forEach((c) => {
+    const active = grouped[`class_${c.level}_active`]?.[0] || "না";
+    const price = grouped[`class_${c.level}_price`]?.[0] || "—";
+    lines.push(`${c.name}: ${active} | বেতন: ${price} টাকা`);
+  });
+
+  lines.push("");
+  lines.push("─── বিষয়সমূহ ───");
+  classes.forEach((c) => {
+    const subjects = grouped[`subjects_${c.level}`]?.[0] || "";
+    if (subjects.trim()) {
+      lines.push(`${c.name}:`);
+      subjects.split("\n").filter(Boolean).forEach((s) => lines.push("  - " + s.trim()));
+    }
+  });
+
+  return lines.join("\n");
+}
+
+/* ---------- submit ---------- */
+document.getElementById("submitBtn").addEventListener("click", async (e) => {
+  e.preventDefault();
+  if (!validateStep(7)) return;
+
+  if (!RECIPIENT_EMAIL || RECIPIENT_EMAIL.includes("YOUR_EMAIL_HERE")) {
+    showFallback("ইমেইল ঠিকানা সেট করা হয়নি।");
+    return;
+  }
+
+  const report = buildReport();
+  const btn = document.getElementById("submitBtn");
+  btn.disabled = true;
+  btn.textContent = "পাঠানো হচ্ছে…";
+
+  // Build email payload
+  const fd = new FormData(form);
+  const payload = {
+    _subject: "ডিরাচা একাডেমি — নতুন তথ্য এসেছে",
+    _template: "table",
+    _captcha: "false",
+  };
+  fd.forEach((v, k) => {
+    if (!v) return;
+    const key = (labels[k] || k);
+    if (payload[key]) {
+      payload[key] = payload[key] + ", " + v;
+    } else {
+      payload[key] = v;
+    }
+  });
+
+  try {
+    const res = await fetch(
+      "https://formsubmit.co/ajax/" + encodeURIComponent(RECIPIENT_EMAIL),
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(payload),
+      }
+    );
+    if (!res.ok) throw new Error("Send failed");
+    showSuccess();
+  } catch (err) {
+    showFallback("ইন্টারনেট সমস্যা হয়েছে।");
+  } finally {
+    btn.disabled = false;
+    btn.textContent = "পাঠিয়ে দিন ✓";
+  }
+});
+
+/* ---------- modal ---------- */
+function openModal(icon, iconClass, title, body, actions, showText = false) {
+  document.getElementById("modalIcon").textContent = icon;
+  document.getElementById("modalIcon").className = "icon " + iconClass;
+  document.getElementById("modalTitle").textContent = title;
+  document.getElementById("modalBody").innerHTML = body;
+
+  const ta = document.getElementById("modalText");
+  if (showText) {
+    ta.value = buildReport();
+    ta.classList.add("show");
+  } else {
+    ta.classList.remove("show");
+  }
+
+  const actionsEl = document.getElementById("modalActions");
+  actionsEl.innerHTML = "";
+  actions.forEach((a) => {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className = "btn " + (a.primary ? "primary" : "ghost");
+    b.textContent = a.label;
+    b.addEventListener("click", a.onClick);
+    actionsEl.appendChild(b);
+  });
+  document.getElementById("modal").classList.add("open");
+}
+
+function closeModal() {
+  document.getElementById("modal").classList.remove("open");
+}
+
+function showSuccess() {
+  openModal(
+    "✓",
+    "ok",
+    "আলহামদুলিল্লাহ, পাঠানো হয়েছে!",
+    "আপনার তথ্য আমাদের কাছে পৌঁছে গেছে। আমরা শীঘ্রই যোগাযোগ করব।<br><br>আপনি চাইলে নিচের বাটন দিয়ে একটি কপি ডাউনলোড করতে পারেন।",
+    [
+      { label: "কপি ডাউনলোড করুন", onClick: () => downloadReport() },
+      { label: "ঠিক আছে", primary: true, onClick: closeModal },
+    ]
+  );
+  try { localStorage.removeItem(STORAGE_KEY); } catch (e) {}
+}
+
+function showFallback(reason) {
+  openModal(
+    "!",
+    "err",
+    "পাঠানো যাচ্ছে না",
+    reason +
+      "<br><br>চিন্তা নেই — নিচের লেখাটি কপি করে আমাদের হোয়াটসঅ্যাপে পাঠিয়ে দিন। অথবা ডাউনলোড করে সংরক্ষণ করুন।",
+    [
+      { label: "সব লেখা কপি করুন", onClick: () => { copyReport(); } },
+      { label: "ফাইল ডাউনলোড", onClick: () => { downloadReport(); } },
+      { label: "ঠিক আছে", primary: true, onClick: closeModal },
+    ],
+    true
+  );
+}
+
+/* ---------- copy / download ---------- */
+function copyReport() {
+  const text = buildReport();
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(text).then(
+      () => alert("কপি হয়েছে! এখন হোয়াটসঅ্যাপে পেস্ট করুন।"),
+      () => alert("কপি করা যায়নি। ডাউনলোড বাটন ব্যবহার করুন।")
+    );
+  } else {
+    alert("কপি করা যায়নি। ডাউনলোড বাটন ব্যবহার করুন।");
+  }
+}
+
+function downloadReport() {
+  const blob = new Blob([buildReport()], { type: "text/plain;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "diracha-academy-info-" + new Date().toISOString().slice(0, 10) + ".txt";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+document.getElementById("btnDownload").addEventListener("click", downloadReport);
+
+/* ---------- init ---------- */
+(function init() {
+  restore();
+  updateProgress();
+})();
+</script>
+
+</body>
+</html>
