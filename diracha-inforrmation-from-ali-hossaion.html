@@ -35,7 +35,6 @@ body{
   padding-bottom:100px;
 }
 
-/* ---------- header ---------- */
 .top{
   background:linear-gradient(135deg,var(--teal),#0EA5E9);
   color:#fff;
@@ -54,349 +53,100 @@ body{
   margin-bottom:10px;
 }
 
-/* ---------- progress ---------- */
-.progress-wrap{
-  padding:0 20px;
-  margin-top:-18px;
-  margin-bottom:18px;
-}
-.progress-card{
-  background:var(--card);
-  border-radius:14px;
-  padding:14px 16px;
-  box-shadow:var(--shadow);
-}
-.progress-bar{
-  height:6px;
-  background:#E5E7EB;
-  border-radius:99px;
-  overflow:hidden;
-  margin-bottom:8px;
-}
-.progress-bar i{
-  display:block;
-  height:100%;
-  width:14%;
-  background:linear-gradient(90deg,var(--teal),#0EA5E9);
-  transition:width .35s ease;
-}
-.progress-text{
-  font-size:13px;
-  color:var(--muted);
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
+.progress-wrap{padding:0 20px;margin-top:-18px;margin-bottom:18px}
+.progress-card{background:var(--card);border-radius:14px;padding:14px 16px;box-shadow:var(--shadow)}
+.progress-bar{height:6px;background:#E5E7EB;border-radius:99px;overflow:hidden;margin-bottom:8px}
+.progress-bar i{display:block;height:100%;width:14%;background:linear-gradient(90deg,var(--teal),#0EA5E9);transition:width .35s ease}
+.progress-text{font-size:13px;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
 .progress-text b{color:var(--teal)}
 
-/* ---------- steps ---------- */
 .wrap{max-width:640px;margin:0 auto;padding:0 16px}
 .step{display:none;animation:fade .3s ease}
 .step.active{display:block}
 @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 
-.card{
-  background:var(--card);
-  border-radius:var(--radius);
-  padding:22px 20px;
-  box-shadow:var(--shadow);
-  margin-bottom:16px;
-}
+.card{background:var(--card);border-radius:var(--radius);padding:22px 20px;box-shadow:var(--shadow);margin-bottom:16px}
 .step-head{margin-bottom:18px}
-.step-head .num{
-  display:inline-block;
-  background:var(--teal-soft);
-  color:var(--teal);
-  font-weight:700;
-  font-size:13px;
-  padding:4px 12px;
-  border-radius:99px;
-  margin-bottom:10px;
-}
-.step-head h2{
-  margin:0 0 6px;
-  font-size:19px;
-  font-weight:700;
-  letter-spacing:-.3px;
-  line-height:1.35;
-}
-.step-head p{
-  margin:0;
-  color:var(--muted);
-  font-size:14px;
-  line-height:1.55;
-}
+.step-head .num{display:inline-block;background:var(--teal-soft);color:var(--teal);font-weight:700;font-size:13px;padding:4px 12px;border-radius:99px;margin-bottom:10px}
+.step-head h2{margin:0 0 6px;font-size:19px;font-weight:700;letter-spacing:-.3px;line-height:1.35}
+.step-head p{margin:0;color:var(--muted);font-size:14px;line-height:1.55}
 
-/* ---------- fields ---------- */
 .field{margin-bottom:18px}
 .field:last-child{margin-bottom:0}
-label{
-  display:block;
-  font-weight:600;
-  font-size:14.5px;
-  margin-bottom:6px;
-  color:var(--ink);
-}
-label .opt{
-  font-weight:400;
-  color:var(--muted);
-  font-size:12.5px;
-  margin-left:4px;
-}
-input[type="text"],
-input[type="tel"],
-input[type="email"],
-input[type="url"],
-input[type="number"],
-select,
-textarea{
-  width:100%;
-  padding:13px 14px;
-  border:2px solid var(--line);
-  border-radius:12px;
-  font-family:inherit;
-  font-size:15.5px;
-  background:#fff;
-  color:var(--ink);
-  transition:.15s;
-  -webkit-appearance:none;
-  appearance:none;
+label{display:block;font-weight:600;font-size:14.5px;margin-bottom:6px;color:var(--ink)}
+label .opt{font-weight:400;color:var(--muted);font-size:12.5px;margin-left:4px}
+input[type="text"],input[type="tel"],input[type="email"],input[type="url"],input[type="number"],select,textarea{
+  width:100%;padding:13px 14px;border:2px solid var(--line);border-radius:12px;
+  font-family:inherit;font-size:15.5px;background:#fff;color:var(--ink);transition:.15s;
+  -webkit-appearance:none;appearance:none;
 }
 textarea{min-height:96px;resize:vertical;line-height:1.55}
 input::placeholder,textarea::placeholder{color:#9CA3AF}
-input:focus,select:focus,textarea:focus{
-  outline:none;
-  border-color:var(--teal);
-  box-shadow:0 0 0 4px rgba(15,118,110,.12);
-}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 4px rgba(15,118,110,.12)}
 select{
   background-image:url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364748B' stroke-width='2.5' stroke-linecap='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
-  background-repeat:no-repeat;
-  background-position:right 14px center;
-  background-size:18px;
-  padding-right:44px;
+  background-repeat:no-repeat;background-position:right 14px center;background-size:18px;padding-right:44px;
 }
-.hint{
-  font-size:12.5px;
-  color:var(--muted);
-  margin-top:6px;
-  line-height:1.5;
-  padding-left:2px;
-}
+.hint{font-size:12.5px;color:var(--muted);margin-top:6px;line-height:1.5;padding-left:2px}
 .hint b{color:var(--teal);font-weight:600}
 
-/* ---------- choice pills ---------- */
 .pills{display:flex;flex-wrap:wrap;gap:8px}
 .pill{
-  position:relative;
-  display:inline-flex;
-  align-items:center;
-  padding:11px 16px;
-  background:#F1F5F9;
-  border:2px solid transparent;
-  border-radius:12px;
-  cursor:pointer;
-  font-size:14.5px;
-  font-weight:500;
-  transition:.15s;
-  user-select:none;
+  position:relative;display:inline-flex;align-items:center;padding:11px 16px;
+  background:#F1F5F9;border:2px solid transparent;border-radius:12px;
+  cursor:pointer;font-size:14.5px;font-weight:500;transition:.15s;user-select:none;
 }
-.pill input{
-  position:absolute;opacity:0;pointer-events:none;
-}
-.pill:has(input:checked){
-  background:var(--teal-soft);
-  border-color:var(--teal);
-  color:var(--teal-dark);
-  font-weight:600;
-}
-.pill:has(input:checked)::before{
-  content:"✓";
-  margin-right:6px;
-  font-weight:800;
-  color:var(--teal);
-}
+.pill input{position:absolute;opacity:0;pointer-events:none}
+.pill:has(input:checked){background:var(--teal-soft);border-color:var(--teal);color:var(--teal-dark);font-weight:600}
+.pill:has(input:checked)::before{content:"✓";margin-right:6px;font-weight:800;color:var(--teal)}
 
-/* ---------- class price rows ---------- */
-.class-row{
-  background:#F8FAFC;
-  border:1.5px solid var(--line);
-  border-radius:14px;
-  padding:14px 14px 10px;
-  margin-bottom:10px;
-}
-.class-row .row-head{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  margin-bottom:10px;
-  padding-bottom:10px;
-  border-bottom:1px dashed var(--line);
-}
+.class-row{background:#F8FAFC;border:1.5px solid var(--line);border-radius:14px;padding:14px 14px 10px;margin-bottom:10px}
+.class-row .row-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;padding-bottom:10px;border-bottom:1px dashed var(--line)}
 .class-row .row-head strong{font-size:15px;color:var(--teal)}
-.class-row .row-head .status-pill{
-  font-size:11.5px;
-  font-weight:700;
-  padding:3px 10px;
-  border-radius:99px;
-  background:#E5E7EB;
-  color:var(--muted);
-}
-.class-row .row-head .status-pill.on{
-  background:var(--green-soft);
-  color:var(--green);
-}
+.class-row .row-head .status-pill{font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:99px;background:#E5E7EB;color:var(--muted)}
+.class-row .row-head .status-pill.on{background:var(--green-soft);color:var(--green)}
 .class-row .row-body{display:grid;gap:10px}
-@media(min-width:480px){
-  .class-row .row-body{grid-template-columns:1fr 1fr}
-}
-.mini-label{
-  display:block;
-  font-size:12.5px;
-  font-weight:600;
-  color:var(--muted);
-  margin-bottom:4px;
-}
+@media(min-width:480px){.class-row .row-body{grid-template-columns:1fr 1fr}}
+.mini-label{display:block;font-size:12.5px;font-weight:600;color:var(--muted);margin-bottom:4px}
 
-/* ---------- notice ---------- */
-.notice{
-  background:var(--amber-soft);
-  border-left:4px solid var(--amber);
-  padding:12px 14px;
-  border-radius:8px;
-  font-size:13.5px;
-  color:#92400E;
-  line-height:1.55;
-  margin-bottom:16px;
-}
-.notice.green{
-  background:var(--green-soft);
-  border-color:var(--green);
-  color:#14532D;
-}
+.notice{background:var(--amber-soft);border-left:4px solid var(--amber);padding:12px 14px;border-radius:8px;font-size:13.5px;color:#92400E;line-height:1.55;margin-bottom:16px}
+.notice.green{background:var(--green-soft);border-color:var(--green);color:#14532D}
 
-/* ---------- nav buttons ---------- */
-.nav{
-  display:flex;
-  gap:10px;
-  margin-top:8px;
-}
+.nav{display:flex;gap:10px;margin-top:8px}
 .btn{
-  flex:1;
-  padding:14px 20px;
-  border-radius:12px;
-  font-family:inherit;
-  font-size:15.5px;
-  font-weight:700;
-  cursor:pointer;
-  border:2px solid transparent;
-  transition:.15s;
-  text-align:center;
-  -webkit-appearance:none;
+  flex:1;padding:14px 20px;border-radius:12px;font-family:inherit;
+  font-size:15.5px;font-weight:700;cursor:pointer;border:2px solid transparent;
+  transition:.15s;text-align:center;-webkit-appearance:none;
 }
 .btn:active{transform:scale(.98)}
-.btn.primary{
-  background:var(--teal);
-  color:#fff;
-}
+.btn.primary{background:var(--teal);color:#fff}
 .btn.primary:hover{background:var(--teal-dark)}
-.btn.primary:disabled{opacity:.55}
-.btn.ghost{
-  background:#fff;
-  border-color:var(--line);
-  color:var(--ink);
-  flex:0 0 auto;
-  min-width:96px;
-}
+.btn.primary:disabled{opacity:.55;cursor:not-allowed}
+.btn.ghost{background:#fff;border-color:var(--line);color:var(--ink);flex:0 0 auto;min-width:96px}
 .btn.ghost:hover{background:#F8FAFC}
 
-/* ---------- fixed bottom bar ---------- */
 .bottom{
-  position:fixed;
-  left:0;right:0;bottom:0;
-  background:rgba(255,255,255,.96);
-  backdrop-filter:blur(10px);
-  border-top:1px solid var(--line);
-  padding:12px 16px;
-  padding-bottom:calc(12px + env(safe-area-inset-bottom));
-  z-index:50;
+  position:fixed;left:0;right:0;bottom:0;
+  background:rgba(255,255,255,.96);backdrop-filter:blur(10px);
+  border-top:1px solid var(--line);padding:12px 16px;
+  padding-bottom:calc(12px + env(safe-area-inset-bottom));z-index:50;
 }
-.bottom-in{
-  max-width:640px;
-  margin:0 auto;
-  display:flex;
-  gap:8px;
-  align-items:center;
-}
-.bottom .save-note{
-  flex:1;
-  font-size:12px;
-  color:var(--muted);
-  line-height:1.3;
-}
+.bottom-in{max-width:640px;margin:0 auto;display:flex;gap:8px;align-items:center}
+.bottom .save-note{flex:1;font-size:12px;color:var(--muted);line-height:1.3}
 .bottom .save-note.saved{color:var(--green)}
 .bottom .btn{padding:11px 18px;font-size:14.5px}
 
-/* ---------- modal ---------- */
-.modal{
-  position:fixed;inset:0;
-  background:rgba(15,23,42,.6);
-  display:none;
-  z-index:100;
-  padding:16px;
-  overflow-y:auto;
-}
+.modal{position:fixed;inset:0;background:rgba(15,23,42,.6);display:none;z-index:100;padding:16px;overflow-y:auto}
 .modal.open{display:flex;align-items:flex-start;justify-content:center;padding-top:40px}
-.modal-box{
-  background:#fff;
-  border-radius:20px;
-  max-width:520px;
-  width:100%;
-  padding:24px 22px;
-  box-shadow:0 20px 50px -12px rgba(0,0,0,.4);
-}
+.modal-box{background:#fff;border-radius:20px;max-width:520px;width:100%;padding:24px 22px;box-shadow:0 20px 50px -12px rgba(0,0,0,.4)}
 .modal-box h3{margin:0 0 10px;font-size:18px;line-height:1.35}
 .modal-box p{margin:0 0 14px;color:var(--muted);font-size:14.5px;line-height:1.55}
-.modal-box .icon{
-  display:grid;place-items:center;
-  width:56px;height:56px;
-  border-radius:99px;
-  margin:0 auto 14px;
-  font-size:28px;
-}
+.modal-box .icon{display:grid;place-items:center;width:56px;height:56px;border-radius:99px;margin:0 auto 14px;font-size:28px}
 .modal-box .icon.ok{background:var(--green-soft);color:var(--green)}
 .modal-box .icon.err{background:var(--red-soft);color:var(--red)}
 .modal-box .actions{display:flex;flex-direction:column;gap:8px;margin-top:8px}
-.modal-box textarea{
-  font-family:ui-monospace,Menlo,monospace;
-  font-size:11.5px;
-  min-height:160px;
-  margin-top:10px;
-  display:none;
-}
+.modal-box textarea{font-family:ui-monospace,Menlo,monospace;font-size:11.5px;min-height:160px;margin-top:10px;display:none}
 .modal-box textarea.show{display:block}
-
-/* ---------- final step summary ---------- */
-.done-list{
-  list-style:none;
-  padding:0;
-  margin:0 0 14px;
-}
-.done-list li{
-  padding:10px 0;
-  border-bottom:1px solid var(--line);
-  font-size:14px;
-  display:flex;
-  align-items:flex-start;
-  gap:10px;
-}
-.done-list li::before{
-  content:"✓";
-  color:var(--green);
-  font-weight:800;
-  flex-shrink:0;
-}
-.done-list li:last-child{border-bottom:none}
 
 @media (max-width:400px){
   .top h1{font-size:19px}
@@ -428,7 +178,7 @@ select{
 <!-- ================= FORM ================= -->
 <form id="form" class="wrap" novalidate>
 
-  <!-- =========== STEP 1: Who you are =========== -->
+  <!-- =========== STEP 1 =========== -->
   <section class="step active" data-step="1" data-label="আপনার পরিচয়">
     <div class="card">
       <div class="step-head">
@@ -470,7 +220,7 @@ select{
     </div>
   </section>
 
-  <!-- =========== STEP 2: Academy info =========== -->
+  <!-- =========== STEP 2 =========== -->
   <section class="step" data-step="2" data-label="একাডেমির তথ্য">
     <div class="card">
       <div class="step-head">
@@ -522,7 +272,7 @@ select{
     </div>
   </section>
 
-  <!-- =========== STEP 3: Classes & prices =========== -->
+  <!-- =========== STEP 3 =========== -->
   <section class="step" data-step="3" data-label="শ্রেণি ও বেতন">
     <div class="card">
       <div class="step-head">
@@ -535,10 +285,7 @@ select{
         💡 <b>মনে রাখবেন:</b> এখানে শিক্ষার্থীরা পুরো <b>একটি শ্রেণি</b> কিনবে — শুধু একটা বিষয় নয়। তাই প্রতিটি শ্রেণির জন্য একটি মাত্র বেতন দিন।
       </div>
 
-      <div id="classList">
-        <!-- filled by JS -->
-      </div>
-
+      <div id="classList"></div>
     </div>
     <div class="nav">
       <button type="button" class="btn ghost" data-back>← পিছনে</button>
@@ -546,7 +293,7 @@ select{
     </div>
   </section>
 
-  <!-- =========== STEP 4: Subjects =========== -->
+  <!-- =========== STEP 4 =========== -->
   <section class="step" data-step="4" data-label="বিষয়সমূহ">
     <div class="card">
       <div class="step-head">
@@ -564,10 +311,7 @@ select{
         বিজ্ঞান
       </div>
 
-      <div id="subjectList">
-        <!-- filled by JS -->
-      </div>
-
+      <div id="subjectList"></div>
     </div>
     <div class="nav">
       <button type="button" class="btn ghost" data-back>← পিছনে</button>
@@ -575,7 +319,7 @@ select{
     </div>
   </section>
 
-  <!-- =========== STEP 5: Payment =========== -->
+  <!-- =========== STEP 5 =========== -->
   <section class="step" data-step="5" data-label="বেতন পরিশোধ">
     <div class="card">
       <div class="step-head">
@@ -623,7 +367,7 @@ select{
     </div>
   </section>
 
-  <!-- =========== STEP 6: Rules =========== -->
+  <!-- =========== STEP 6 =========== -->
   <section class="step" data-step="6" data-label="নিয়মকানুন">
     <div class="card">
       <div class="step-head">
@@ -690,7 +434,7 @@ select{
     </div>
   </section>
 
-  <!-- =========== STEP 7: Final =========== -->
+  <!-- =========== STEP 7 =========== -->
   <section class="step" data-step="7" data-label="শেষ ধাপ">
     <div class="card">
       <div class="step-head">
@@ -746,9 +490,9 @@ select{
 
 <script>
 /* =========================================================
-   ⚙️  CHANGE THIS EMAIL BEFORE UPLOADING
+   ✅ WEB3FORMS — আপনার KEY ইতিমধ্যেই বসানো আছে
    ========================================================= */
-const RECIPIENT_EMAIL = "YOUR_EMAIL_HERE@example.com";
+const WEB3FORMS_KEY = "6445e826-edfb-486c-b1c9-f32bb9cb8689";
 /* ========================================================= */
 
 const STORAGE_KEY = "diracha_client_form_v1";
@@ -794,7 +538,6 @@ classes.forEach((c) => {
   classListEl.appendChild(row);
 });
 
-// Update status pill when toggle changes
 document.querySelectorAll("[data-toggle]").forEach((el) => {
   el.addEventListener("change", () => {
     const level = el.dataset.toggle;
@@ -843,7 +586,7 @@ document.querySelectorAll("[data-back]").forEach((b) =>
   b.addEventListener("click", () => goTo(current - 1))
 );
 
-/* ---------- validation (only required fields) ---------- */
+/* ---------- validation ---------- */
 function validateStep(step) {
   const section = steps.find((s) => Number(s.dataset.step) === step);
   if (!section) return true;
@@ -1000,51 +743,106 @@ function buildReport() {
   return lines.join("\n");
 }
 
-/* ---------- submit ---------- */
+/* ---------- submit (Web3Forms) ---------- */
 document.getElementById("submitBtn").addEventListener("click", async (e) => {
   e.preventDefault();
   if (!validateStep(7)) return;
 
-  if (!RECIPIENT_EMAIL || RECIPIENT_EMAIL.includes("YOUR_EMAIL_HERE")) {
-    showFallback("ইমেইল ঠিকানা সেট করা হয়নি।");
+  if (!WEB3FORMS_KEY || WEB3FORMS_KEY.length < 20) {
+    showFallback("Access key সেট করা হয়নি।");
     return;
   }
 
-  const report = buildReport();
   const btn = document.getElementById("submitBtn");
   btn.disabled = true;
   btn.textContent = "পাঠানো হচ্ছে…";
 
-  // Build email payload
+  // Build payload for Web3Forms
   const fd = new FormData(form);
   const payload = {
-    _subject: "ডিরাচা একাডেমি — নতুন তথ্য এসেছে",
-    _template: "table",
-    _captcha: "false",
+    access_key: WEB3FORMS_KEY,
+    subject: "ডিরাচা একাডেমি — নতুন তথ্য এসেছে (" + (fd.get("your_name") || "ক্লায়েন্ট") + ")",
+    from_name: "Diracha Client Form",
+    replyto: fd.get("your_email") || "",
   };
+
+  // Human-readable field labels
+  const labelMap = {
+    your_name: "নাম",
+    your_role: "পদ",
+    your_phone: "ফোন",
+    your_email: "ইমেইল",
+    academy_name: "একাডেমির নাম",
+    academy_address: "ঠিকানা",
+    academy_phone: "একাডেমির ফোন",
+    academy_email: "একাডেমির ইমেইল",
+    academy_about: "একাডেমি সম্পর্কে",
+    has_logo: "লোগো আছে?",
+    pay_method: "পেমেন্ট মাধ্যম",
+    pay_number: "টাকা পাঠানোর নম্বর",
+    pay_account_name: "অ্যাকাউন্টের নাম",
+    pay_instruction: "শিক্ষার্থীর নির্দেশনা",
+    free_lessons: "ফ্রি লেসন",
+    access_duration: "কেনার পরে কতদিন",
+    multi_class: "একাধিক শ্রেণি?",
+    teacher_count: "শিক্ষক সংখ্যা",
+    teacher_publish: "শিক্ষক সরাসরি পাবলিশ?",
+    final_notes: "অতিরিক্ত মন্তব্য",
+    confirm: "নিশ্চিতকরণ",
+  };
+
+  // Group values by name (for checkbox groups)
+  const grouped = {};
   fd.forEach((v, k) => {
-    if (!v) return;
-    const key = (labels[k] || k);
-    if (payload[key]) {
-      payload[key] = payload[key] + ", " + v;
-    } else {
-      payload[key] = v;
+    if (!grouped[k]) grouped[k] = [];
+    grouped[k].push(v);
+  });
+
+  // Add class rows and subjects in readable form
+  classes.forEach((c) => {
+    const active = grouped[`class_${c.level}_active`]?.[0] || "না";
+    const price = grouped[`class_${c.level}_price`]?.[0] || "—";
+    payload[`${c.name} — চালু?`] = active;
+    payload[`${c.name} — বেতন`] = price ? price + " টাকা" : "—";
+  });
+
+  classes.forEach((c) => {
+    const subs = grouped[`subjects_${c.level}`]?.[0] || "";
+    if (subs.trim()) {
+      payload[`${c.name} — বিষয়সমূহ`] = subs.trim();
     }
   });
 
+  // Add all other fields
+  Object.entries(grouped).forEach(([k, values]) => {
+    if (k.startsWith("class_") || k.startsWith("subjects_")) return;
+    const label = labelMap[k] || k;
+    payload[label] = values.join(", ");
+  });
+
+  // Add the full plain-text report as backup
+  payload["সম্পূর্ণ রিপোর্ট"] = buildReport();
+
   try {
-    const res = await fetch(
-      "https://formsubmit.co/ajax/" + encodeURIComponent(RECIPIENT_EMAIL),
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify(payload),
-      }
-    );
-    if (!res.ok) throw new Error("Send failed");
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
+
+    let json = null;
+    try { json = await res.json(); } catch (_) {}
+
+    if (!res.ok || !json || json.success === false) {
+      throw new Error(json?.message || "Send failed");
+    }
+
     showSuccess();
   } catch (err) {
-    showFallback("ইন্টারনেট সমস্যা হয়েছে।");
+    showFallback(err.message || "ইন্টারনেট সমস্যা হয়েছে।");
   } finally {
     btn.disabled = false;
     btn.textContent = "পাঠিয়ে দিন ✓";
